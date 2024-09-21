@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border: 2px solid #ff9999;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff4d4d;
+            font-size: 2em;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #ff6666;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+        }
+
+        #noButton {
+            position: absolute;
+        }
+
+        .heart {
+            color: #ff1a1a;
+            font-size: 100px;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my girlfriend? 💖</h1>
+        <div class="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <script>
+        const noButton = document.getElementById("noButton");
+
+        noButton.addEventListener("mouseover", function () {
+            const x = Math.random() * window.innerWidth * 0.8; // 80% width to prevent going off screen
+            const y = Math.random() * window.innerHeight * 0.8; // 80% height to prevent going off screen
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+        });
+
+        document.getElementById("yesButton").addEventListener("click", function () {
+            alert("Yay! I knew you'd say yes! ❤️");
+        });
+    </script>
+</body>
+</html>
+``
